@@ -1,0 +1,29 @@
+package hellokk.designDemo.Observer.newObserver;
+
+public abstract class AbsSubjet implements Subject {
+
+	@Override
+	public void add(ObServer o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(ObServer o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void notifyObServers() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void operation() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

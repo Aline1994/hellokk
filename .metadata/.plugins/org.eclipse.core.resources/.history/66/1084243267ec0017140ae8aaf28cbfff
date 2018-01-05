@@ -1,0 +1,14 @@
+package hellokk.collection.queue;
+
+import java.util.PriorityQueue;
+//按实际顺序从小到大排列
+public class PriorityQueueTest {
+	public static void main(String[] args) {
+		PriorityQueue pq = new PriorityQueue();
+		pq.offer(6);
+		pq.offer(12);
+		pq.offer(-2);
+		System.out.println(pq);
+		System.out.println(pq.poll());
+	}
+}

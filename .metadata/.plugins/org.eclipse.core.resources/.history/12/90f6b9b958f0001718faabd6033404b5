@@ -1,0 +1,10 @@
+package hellokk.designDemo.Observer.newObserver;
+
+public class ObServer1 implements ObServer{
+
+	@Override
+	public void update() {
+		
+	}
+	
+}

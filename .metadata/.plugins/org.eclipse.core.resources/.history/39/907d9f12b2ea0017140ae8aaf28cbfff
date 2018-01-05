@@ -1,0 +1,9 @@
+package hellokk.designDemo.facory;
+
+public class Test {
+	public static void main(String[] args) {
+		SendFactoru sf = new SendFactoru();
+		Sender sender = sf.produce("mail");
+		sender.Send();
+	}
+}

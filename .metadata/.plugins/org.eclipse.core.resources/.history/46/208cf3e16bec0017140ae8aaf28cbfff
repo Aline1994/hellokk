@@ -1,0 +1,23 @@
+package hellokk.collection.practice;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Set20Test {
+	public static void main(String[] args) {
+		for(int i=0;i<20;i++){
+			Scanner scan = new Scanner(System.in);
+			String s = scan.next();
+			Set<String>set = AddString(s);
+		
+		}
+		System.out.println(set);
+	}
+	
+	public static Set<String> AddString(String as){
+		Set<String> set = new HashSet<String>();
+		set.add(as);
+		return set;
+	}
+}

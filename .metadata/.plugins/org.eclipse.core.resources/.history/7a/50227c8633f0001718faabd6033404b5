@@ -1,0 +1,20 @@
+package hellokk.designDemo.composite.newComposit;
+
+public class Client {
+	public static void main(String[] args) {
+		Company root = new ConcretCompany();
+		root.SetName("北京总公司");
+		root.add(new HRDepartment("人力资源部"));
+		root.add(new FinanceDepartment("金融事业部"));
+		
+		Company sdcomp = new ConcretCompany();
+		sdcomp.SetName("山东分公司");
+		sdcomp.add(new HRDepartment("山东分公司人力资源部"));
+		sdcomp.add(new FinanceDepartment("山东财务部"));
+		
+		
+		Company shcom = new ConcretCompany("上海分公司");
+		shcom.add(new HRDepartment("上海分公司人力资源部"));
+		shcom.add(new FinanceDepartment("上海分公司财务部"));
+	}
+}

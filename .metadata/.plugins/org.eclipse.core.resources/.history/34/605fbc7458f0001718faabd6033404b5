@@ -1,0 +1,5 @@
+package hellokk.designDemo.Observer.newObserver;
+
+public class MySubject {
+
+}

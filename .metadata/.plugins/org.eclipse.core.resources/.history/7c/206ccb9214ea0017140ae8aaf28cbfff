@@ -1,0 +1,10 @@
+package hellokk.designDemo.template;
+
+public class TemTest {
+	public static void main(String[] args) {
+		String exp = "8+9";
+		AbsCalculate ac = new Plus();
+		int z=ac.calculate(exp, "\\+");
+		
+	}
+}

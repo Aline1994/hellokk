@@ -1,0 +1,5 @@
+package hellokk.designDemo.decorator;
+
+public class Sourcable {
+
+}

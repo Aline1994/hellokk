@@ -1,0 +1,9 @@
+map接口的实现类包括hashmap,treemap
+hashmap的子类包括linkedhashmap
+hashmap中的key值是hashset的形式存储的，并且没有顺序
+linkedhashmap是以插入的顺序存储的
+treemap需要实现comparable接口,底层是红黑二叉树实现的
+
+
+hashmap和hashtable的区别：线程不安全和线程安全
+						key可以是null和key不可以是null

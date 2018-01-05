@@ -1,0 +1,21 @@
+package hellokk.set;
+
+import java.util.TreeSet;
+
+public class TreeSetTest {
+	public static void main(String[] args) {
+		 TreeSet ts = new TreeSet();
+		 ts.add(5);
+		 ts.add(9);
+		 ts.add(3);
+		 ts.add(-2);
+		 System.out.println(ts);
+		 System.out.println(ts.first());
+		 System.out.println(ts.last());
+		 System.out.println(ts.lower(2));//小于指定元素最大的元素
+		 System.out.println(ts.higher(3));//大于指定元素最小元素
+		 System.out.println(ts.subSet(1, 3));
+		 System.out.println(ts.headSet(5));
+		 System.out.println(ts.tailSet(2));
+	}
+}

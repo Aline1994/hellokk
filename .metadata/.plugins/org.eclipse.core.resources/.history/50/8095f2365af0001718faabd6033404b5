@@ -1,0 +1,5 @@
+package hellokk.designDemo.visitor.newVisitor;
+
+public class Subject {
+
+}
