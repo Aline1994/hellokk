@@ -1,0 +1,5 @@
+package hellokk.thread.state;
+
+public class StartDead {
+
+}

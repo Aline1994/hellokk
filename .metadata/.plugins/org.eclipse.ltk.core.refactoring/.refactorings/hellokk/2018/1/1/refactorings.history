@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;hellokk/src/hellokk/thread/start/ThreadBuildOne.java&apos; to &apos;ThreadBuildOneTest.java&apos;" description="Rename resource &apos;ThreadBuildOne.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/hellokk/thread/start/ThreadBuildOne.java" name="ThreadBuildOneTest.java" stamp="1515136189846" updateReferences="true"/>
+</session>

@@ -1,0 +1,23 @@
+package hellokk.thread.start;
+
+public class ThreadBuildOneTest{
+	public static void main(String[] args) {
+		System.out.println(Thread.currentThread().getName());
+		ThreadBuildOne tb = new ThreadBuildOne("zx");
+		ThreadBuildOne tb1 = new ThreadBuildOne("kk");
+		tb1.start();
+		tb.start();
+	}
+}
+class ThreadBuildOne extends Thread {
+	private String name;
+	public ThreadBuildOne(String name){
+		this.name = name;
+	}
+	public void run(){
+		for(int i=0;i<10;i++){
+			System.out.println(getName()+" "+i);
+		}
+	}
+}
+
