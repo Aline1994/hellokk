@@ -1,0 +1,26 @@
+package com.bonc.hbase;
+
+import java.io.IOException;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.HColumnDescriptor;
+import org.apache.hadoop.hbase.HTableDescriptor;
+import org.apache.hadoop.hbase.MasterNotRunningException;
+import org.apache.hadoop.hbase.ZooKeeperConnectionException;
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
+import org.apache.hadoop.hbase.client.HBaseAdmin;
+
+public class CreateTable {
+	public static void main(String[] args) throws MasterNotRunningException, ZooKeeperConnectionException, IOException {
+		Configuration conf = new Configuration();
+		conf.addResource("/resource/hbase.xml");
+		Connection conn = ConnectionFactory.createConnection(conf);
+		HBaseAdmin ha = (HBaseAdmin) conn.getAdmin();
+		HTableDescriptor hd = new HTableDescriptor("student");
+		HColumnDescriptor hdc = new HColumnDescriptor("info");
+		hd.addFamily(hdc);
+		ha.createTable(hd);
+		System.out.println("创建成功");
+	}
+}

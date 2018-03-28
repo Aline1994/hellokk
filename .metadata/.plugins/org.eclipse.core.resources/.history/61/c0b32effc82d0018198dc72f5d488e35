@@ -1,0 +1,27 @@
+package com.jdk.base;
+
+public class ReWriteEqual extends Object{
+	String name;
+	 public boolean equals(Object obj) {
+	        if(this==obj){
+	        	return true;
+	        }
+	        if(obj instanceof String){
+	        	String obj1 = (String)obj;
+	        	int n = name.length();
+	        	if(name.length()==obj1.length()){
+	        		char[]name1=name.toCharArray();
+	        		char[]obj2=obj1.toCharArray();
+	        		int i=0;
+	        		while(n--!=0){
+	        			if(name1[i]!=obj2[i]){
+	        				return false;
+	        			}
+	        			i++;
+	        			
+	        			return true;
+	        		}
+	        	}
+	        }
+	    }
+}

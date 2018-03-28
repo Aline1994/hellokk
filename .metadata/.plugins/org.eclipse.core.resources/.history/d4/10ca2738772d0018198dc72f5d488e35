@@ -1,0 +1,13 @@
+package hellokk.collection.list.newList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListTest {
+	public List l= new ArrayList();
+	public void add(){
+		for(int i=0;i<10;i++){
+			l.add(i);
+		}
+	}
+}

@@ -1,0 +1,27 @@
+package hellokk.collection.list.newList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListTest {
+	private static ListTest instance=new ListTest();
+	public static ListTest getInstance(){
+		return instance;
+	}
+	public List l1= new ArrayList();
+	public void add(){
+		for(int i=0;i<10;i++){
+			l1.add(i);
+		}
+		System.out.println(ListTest.getInstance().l1.size());
+	}
+	public static void main(String[] args) {
+		ListSafe ls = new ListSafe();
+		ListTest2 lt = new ListTest2();
+		Thread t = new Thread(lt);
+		t.start();
+		ls.start();
+		
+		
+	}
+}

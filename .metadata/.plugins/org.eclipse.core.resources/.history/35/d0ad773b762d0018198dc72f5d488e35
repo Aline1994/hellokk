@@ -1,0 +1,10 @@
+package hellokk.collection.list.newList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListSafe extends Thread {
+	public void run(){
+		
+	}
+}

@@ -1,0 +1,9 @@
+package com.bonc.thread;
+
+public class Xc implements Runnable{
+
+	public void run() {
+		
+	}
+
+}

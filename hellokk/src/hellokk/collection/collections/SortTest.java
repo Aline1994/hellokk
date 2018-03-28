@@ -42,7 +42,7 @@ class SearchTest{
 		list.add(10);
 		list.add(2);
 		System.out.println(list);
-		System.out.println(Collections.max(list));
+		System.out.println(Collections.max(list));`
 		System.out.println(Collections.min(list));
 		Collections.replaceAll(list, 2, 1);
 		System.out.println(list);

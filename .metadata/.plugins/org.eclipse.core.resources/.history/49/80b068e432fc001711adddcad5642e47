@@ -1,0 +1,21 @@
+package hellokk.shuati;
+
+import java.util.Scanner;
+
+public class Peidui2 {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("请输入你要输入几组数，数量要小于5");
+		int num = input.nextInt();
+		String [] peidui = new String[num];
+		for(int i=0;i<num;i++){
+			Scanner input2 = new Scanner(System.in);
+			System.out.println("请输入第"+i+"个要判断的");
+			String c = input2.next();
+			 peidui[i]=c;
+		}
+	}
+	public boolean isPeidui(String [] s){
+		
+	}
+}

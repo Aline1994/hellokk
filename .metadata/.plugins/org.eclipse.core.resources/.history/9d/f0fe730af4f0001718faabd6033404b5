@@ -1,5 +1,0 @@
-package hellokk.designDemo.Singleton;
-
-private static class SingletonFactory {
-
-}

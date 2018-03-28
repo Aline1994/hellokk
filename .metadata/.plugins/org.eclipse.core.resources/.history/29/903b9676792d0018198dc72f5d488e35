@@ -1,0 +1,14 @@
+package hellokk.collection.list.newList;
+
+public class ListTest2 implements Runnable{
+	ListTest l ;
+	public ListTest2(ListTest l){
+		this.l=l;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		l.l.remove(3);
+	}
+
+}

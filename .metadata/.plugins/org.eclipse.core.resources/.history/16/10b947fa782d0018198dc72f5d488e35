@@ -1,0 +1,8 @@
+package hellokk.collection.list.newList;
+
+public class ListSafe extends Thread {
+	ListTest l = new ListTest();
+	public void run(){
+		l.l.add(11);
+	}
+}

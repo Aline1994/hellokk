@@ -1,0 +1,73 @@
+package com.bonc.hbase;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.HColumnDescriptor;
+import org.apache.hadoop.hbase.HTableDescriptor;
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
+import org.apache.hadoop.hbase.client.HBaseAdmin;
+import org.apache.hadoop.hbase.client.HTable;
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.util.Bytes;
+
+
+public class CreateTable {
+	public static void main(String[] args) throws IOException  {
+		
+		Configuration conf = HBaseConfiguration.create();
+		conf.set("hbase.zookeeper.quorum", "172.16.31.226,172.16.31.225,172.16.31.224");
+		/*conf.addResource(new Path("resource/hbase.xml"));
+		System.out.println(conf.get("hbase.zookeeper.quorum"));*/
+		Connection conn = ConnectionFactory.createConnection(conf);
+		boolean flag = putData(conf);
+		System.out.println(flag);
+		
+	}
+	public static boolean createTable(Connection conn) throws IOException{
+		Boolean flag = false;
+		try {
+			System.out.println("开始创建表---------");
+			HBaseAdmin ha = (HBaseAdmin) conn.getAdmin();
+			HTableDescriptor hd = new HTableDescriptor("student");
+			HColumnDescriptor hdc = new HColumnDescriptor("info");
+			hd.addFamily(hdc);
+			ha.createTable(hd);
+			flag = true;
+			System.out.println("创建成功");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			conn.close();
+		}
+		return flag;
+	}
+	public static boolean putData(Configuration conf) throws IOException{
+		boolean flag = false;
+		try{
+			HTable table = new HTable(conf,"student");
+			List<Put>listData = new ArrayList<Put>();
+			Put put = new Put(Bytes.toBytes("row1"));
+			put.add(Bytes.toBytes("info"), Bytes.toBytes("name"), Bytes.toBytes("zx"));
+			listData.add(put);
+			Put put1 = new Put(Bytes.toBytes("row2"));
+			put.add(Bytes.toBytes("info"), Bytes.toBytes("name"), Bytes.toBytes("ls"));
+			listData.add(put1);
+			Put put2 = new Put(Bytes.toBytes("row1"));
+			put.add(Bytes.toBytes("info"), Bytes.toBytes("age"), Bytes.toBytes(12));
+			listData.add(put2);
+		
+			table.put(listData);
+			table.flushCommits();
+			flag=true;
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return flag;
+	}
+}

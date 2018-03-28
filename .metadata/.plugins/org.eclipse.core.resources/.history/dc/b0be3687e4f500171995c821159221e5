@@ -1,0 +1,7 @@
+package hellokk.thread.internation;
+
+public class Test {
+	public static void main(String[] args) {
+		Account a = new Account("768976",0.0);
+	}
+}

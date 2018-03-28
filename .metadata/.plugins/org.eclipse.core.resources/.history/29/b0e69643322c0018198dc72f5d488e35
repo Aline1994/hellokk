@@ -1,0 +1,14 @@
+package com.bonc.hadoop;
+
+import org.apache.hadoop.io.Text;
+
+public class Diff {
+	public static void main(String[] args) {
+		String s = "\u0041\u00DF\u6771\uD801\uDC00";
+		System.out.println(s.length());
+		System.out.println(s.indexOf("\u6771"));
+		
+		Text t = new Text("\u0041\u00DF\u6771\uD801\uDC00");
+		System.out.println(t.find("\u6771"));
+	}
+}

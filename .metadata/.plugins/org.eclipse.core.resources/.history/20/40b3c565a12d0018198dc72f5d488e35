@@ -1,0 +1,38 @@
+package com.bonc.hbase;
+
+import java.io.IOException;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.HColumnDescriptor;
+import org.apache.hadoop.hbase.HTableDescriptor;
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
+import org.apache.hadoop.hbase.client.HBaseAdmin;
+import org.apache.hadoop.hbase.client.HTable;
+
+public class CreateTable {
+	public static void main(String[] args) throws IOException  {
+		
+		Configuration conf = HBaseConfiguration.create();
+		conf.set("hbase.zookeeper.quorum", "172.16.31.226,172.16.31.225,172.16.31.224");
+		/*conf.addResource(new Path("resource/hbase.xml"));
+		System.out.println(conf.get("hbase.zookeeper.quorum"));*/
+		Connection conn = ConnectionFactory.createConnection(conf);;
+		try {
+			System.out.println("开始创建表---------");
+			HBaseAdmin ha = (HBaseAdmin) conn.getAdmin();
+			HTableDescriptor hd = new HTableDescriptor("student");
+			HColumnDescriptor hdc = new HColumnDescriptor("info");
+			hd.addFamily(hdc);
+			ha.createTable(hd);
+			System.out.println("创建成功");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			conn.close();
+		}
+		
+	}
+}

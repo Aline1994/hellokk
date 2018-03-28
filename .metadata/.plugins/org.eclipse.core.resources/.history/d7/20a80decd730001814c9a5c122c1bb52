@@ -1,0 +1,40 @@
+package com.bonc.shujujiegou;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class CharactorPP {
+	public static void main(String[] args) {
+		Stack<Character> s = new Stack<Character>();
+		Scanner sc = new Scanner(System.in);
+		while(sc.hasNext()){
+			String target = sc.nextLine();
+			char[] bytes = target.toCharArray();
+			s.push(bytes[0]);
+			
+			for(int i=1;i<bytes.length;i++){
+				Character c1,c2;
+				if(s!=null){
+					 c1 = s.peek();
+					 c2 = bytes[i];
+				}else{
+					 c1 = bytes[i];
+					 c2 = bytes[i+1];
+				}
+				
+				if((c1.toString().equals("(")&&c2.toString().equals(")"))||
+						(c1.toString().equals("[")&&c1.toString().equals("]"))||
+						(c1.toString().equals("{")&&c2.toString().equals("}"))){
+					s.pop();
+				}else{
+					s.push(c2);
+				}
+			}
+			boolean isMatch = s.isEmpty();
+			System.out.println(s);
+			System.out.println(isMatch);
+			
+		}
+		sc.close();
+	}
+}

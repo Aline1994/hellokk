@@ -1,0 +1,7 @@
+package com.jdk.extend;
+
+public class Engineer extends Person {
+	public void work(){
+		System.out.println("我需要工作");
+	}
+}

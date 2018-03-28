@@ -19,15 +19,19 @@ public class ListTest {
 		list.add(3);
 		list.add(2);
 		set.add(1);
-		set.add(1);
 		set.add(3);
+		set.add(1);
 		set.add(2);
+		set.add(10);
+		set.add(9);
+		set.add(5);
 		for(int i=0;i<list.size();i++){
-			System.out.println(list.get(i)+"****************");
+			System.out.println(list.get(i)+"*********list*******");
 		}
 		Iterator it = set.iterator();
 		while(it.hasNext()){
-			System.out.println(it.next()+"**********");
+			System.out.println(it.next()+"******set****");
 		}
+		System.out.println(set.toString());
 	}
 }

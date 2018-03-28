@@ -1,0 +1,21 @@
+package com.bonc.shujujiegou;
+
+public class Data {
+	public static final int MAX_LENTH=100;
+}
+class DATA{
+	String key;
+	String name;
+	int age;
+}
+class SLType{
+	private static final int MAX_LENTH = 100;
+	int ListLen;
+	DATA[]listData = new DATA[MAX_LENTH+1];
+	public void SLinit(SLType sl){
+		sl.ListLen=0;
+	}
+	public int SLlength(SLType sl){
+		return sl.ListLen;
+	}
+}

@@ -1,0 +1,16 @@
+package com.jdk.extend;
+
+public class Person {
+	private String name;
+	private String age;
+	
+	public Person(){
+		System.out.println("Person");
+	}
+	public void eat(){
+		System.out.println("人类吃饭");
+	}
+	public void walk(){
+		System.out.println("人会走路");
+	}
+}

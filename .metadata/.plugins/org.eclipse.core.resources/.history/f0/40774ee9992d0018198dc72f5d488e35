@@ -1,0 +1,5 @@
+package hellokk.hbase;
+
+public class HbaseCreateTable {
+
+}

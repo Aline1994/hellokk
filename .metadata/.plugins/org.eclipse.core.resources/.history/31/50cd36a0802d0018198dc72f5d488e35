@@ -1,0 +1,11 @@
+package hellokk.collection.list.newList;
+
+public class ListTest2 implements Runnable{
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		ListTest.getInstance().add();
+	}
+
+}

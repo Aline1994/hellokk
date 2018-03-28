@@ -1,0 +1,28 @@
+package hellokk.collection.list.newList;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ListTest {
+	private static ListTest instance=new ListTest();
+	public static ListTest getInstance(){
+		return instance;
+	}
+	
+	
+	public static final int a = 10;
+	public static int b = 20;
+	
+	static {
+		System.out.println("aaa " + a + "b = " + b);
+		
+	}
+	public List l1= Collections.synchronizedList(new ArrayList());
+	public void  add(){
+		for(int i=0;i<1;i++){
+			l1.add(i);
+		}
+		System.out.println(ListTest.getInstance().l1.size());
+	}
+}

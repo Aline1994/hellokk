@@ -1,0 +1,19 @@
+package hellokk.thread.practice;
+
+public class Test1 {
+
+}
+class  Thread1 extends Thread{
+	public  void run(){
+		for(int i=1;i<53;i++){
+			System.out.println(i);
+		}
+	}
+}
+class  Thread2 extends Thread{
+	public  void run(){
+		for(char i='a';i<53;i++){
+			System.out.println(i);
+		}
+	}
+}

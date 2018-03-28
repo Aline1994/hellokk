@@ -1,9 +1,0 @@
-package hellokk.designDemo.adapter.inter;
-
-import hellokk.designDemo.adapter.Targetable;
-
-public class InterfaceTest {
-	Targetable ta1 = new TargetSub1();
-	Targetable ta2 = new TargetSub2();
-		
-}

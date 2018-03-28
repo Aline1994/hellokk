@@ -1,0 +1,7 @@
+package hellokk.hbase;
+
+public class HbaseCreateTable {
+	public static void main(String[] args) {
+		Configuration conf = new Configuration();
+	}
+}

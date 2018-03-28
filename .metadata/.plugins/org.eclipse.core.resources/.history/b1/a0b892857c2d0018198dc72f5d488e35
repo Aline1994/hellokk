@@ -1,0 +1,13 @@
+package hellokk.collection.list.newList;
+
+public class Test {
+	public static void main(String[] args) {
+		ListSafe ls = new ListSafe();
+		ListTest2 lt = new ListTest2();
+		Thread t = new Thread(lt);
+		t.start();
+		ls.start();
+		
+		System.out.println(ListTest.getInstance().l1.size());
+	}
+}

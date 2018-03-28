@@ -1,0 +1,17 @@
+package hellokk.shuati;
+
+public class Dongtai {
+	public static void main(String[] args) {
+		int a = func(10);
+		System.out.println(a);
+	}
+	public static int func(int n){
+		if(n==1){
+			return 1;
+		}else if(n==2){
+			return 2;
+		}else{
+			return func(n)+func(n-1);
+		}
+	}
+}

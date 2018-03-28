@@ -1,0 +1,13 @@
+package hellokk.collection.list.newList;
+
+public class Test {
+	public static void main(String[] args) throws InterruptedException {
+		ListSafe ls = new ListSafe();
+		ListTest2 lt = new ListTest2();
+		Thread t = new Thread(lt);
+		t.start();
+		ls.start();
+		Thread.sleep(1000);
+		System.out.println("ghfhgf"+ListTest.getInstance().l1.size());
+	}
+}

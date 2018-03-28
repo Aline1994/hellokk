@@ -1,0 +1,13 @@
+package com.bonc.shujujiegou;
+
+public class Data {
+	 static final int MAX_LENTH=100;
+}
+class DATA{
+	String key;
+	String name;
+	int age;
+}
+class SLType{
+	DATA[]listData = new DATA[10];
+}
