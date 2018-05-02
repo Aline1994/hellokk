@@ -1,0 +1,12 @@
+package com.jdk.thread;
+
+public class Test {
+	public static void main(String[] args) {
+		DeadLock dl = new DeadLock(true);
+		Thread t = new Thread(dl);
+		dl.flag=false;
+		Thread t1 = new Thread(dl);
+		t.start();
+		t1.start();
+	}
+}

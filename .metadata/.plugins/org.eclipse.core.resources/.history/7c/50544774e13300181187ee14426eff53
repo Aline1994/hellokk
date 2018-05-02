@@ -1,0 +1,9 @@
+package com.jdk.array;
+
+public class Amain {
+	public static void main(String[] args) {
+		for(int i=0;i<args.length;i++){
+			System.out.println("AAAAAA"+args[i]);
+		}
+	}
+}

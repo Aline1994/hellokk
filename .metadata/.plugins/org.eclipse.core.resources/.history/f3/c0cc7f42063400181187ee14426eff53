@@ -1,0 +1,16 @@
+package com.jdk.thread.mianshi;
+
+public class Jiaoti implements Runnable {
+	private int num;
+	
+	public Jiaoti(){
+		int num=5;
+	}
+
+	@Override
+	public void run() {
+		
+		
+	}
+
+}

@@ -1,0 +1,85 @@
+package hellokk.sort;
+/**
+ * 冒泡排序，最大最小的排在最后一位
+ * @author iwpoo
+ *
+ */
+public class BubbleSort {
+	public static void main(String[] args) {
+		int []x={6,2,4,1,5,9};
+		bubble_sort_improve(x);
+		for (int i : x) {
+			System.out.print(i);
+		}
+		/*System.out.println();
+		quickSort(x);
+		for(int i:x){
+			System.out.print(i);
+		}*/
+	}
+	//冒泡相邻之间的比较
+	
+	//快速选择是第一个和剩下的全部进行比较找出最小的
+	public static void quickSort(int []arr){
+		for(int i=0;i<arr.length;i++){
+			int min = arr[i];
+			for(int j=i;j<arr.length;j++){
+				if(min>arr[j]){
+					min=arr[j];
+					arr[j]=arr[i];
+					arr[i]=min;
+				}
+			}
+		}
+	}
+	
+
+	
+	public static void bubble_sort(int []unsort){
+		for(int i=0;i<unsort.length-1;i++){
+			for(int j=0;j<unsort.length-i-1;j++){
+				if(unsort[j]>unsort[j+1]){
+					int temp = unsort[j];
+					unsort[j]=unsort[j+1];
+					unsort[j+1]=temp;
+				}
+			}
+		}
+	}
+	public static void bubble_sort_improve(int [] a){
+		int flag = a.length-1;
+		int k=0;
+		while(flag>0){
+			k=flag;
+			flag=0;
+			for(int j=0;j<=k;j++){
+				if(a[j]>a[j+1]){
+					a[j]^=a[j+1];
+					a[j+1]^=a[j];
+					a[j]^=a[j+1];
+					flag=j;//記錄交換過的尾邊界
+				}
+				
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,21 @@
+package com.jdk.array;
+
+import java.util.Scanner;
+
+public class Sw {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		switch (a) {
+		case 1:
+			System.out.println("这是春天，百花盛放");
+			break;
+		case 2:
+			System.out.println("这是夏天，热死");
+			break;
+		default:
+			System.out.println("qita");
+			break;
+		}
+	}
+}

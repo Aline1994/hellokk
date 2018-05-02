@@ -1,0 +1,10 @@
+package com.jdk.duotai;
+
+public class Gerbil extends Rodent {
+	public void drink(){
+		System.out.println("¿œ Û∫»ÀÆ");
+	}
+	public void eat(){
+		System.out.println("¿œ Û≥‘∑π");
+	}
+}

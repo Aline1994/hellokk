@@ -1,0 +1,32 @@
+package com.jdk.array;
+
+import java.util.Arrays;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class TreeSetTest {
+	public static void main(String[] args) {
+/*		SortedSet<Item>parts = new TreeSet<>();
+		parts.add(new Item("aaa",12));
+		parts.add(new Item("bbb",13));
+		parts.add(new Item("ccc",14));
+		System.out.println(parts);*/
+		/*System.out.println(2.0-1.1);
+		String aaa = new String("bbb");
+		String bbb = new String("bbb");
+		System.out.println(aaa==bbb);
+		System.out.println(aaa.equals(bbb));
+		if(aaa!=null&&aaa.length()!=0){
+			System.out.println(aaa);
+		}
+		int n = aaa.codePointCount(0, 2);
+		System.out.println(n);*/
+		
+		String greeting = "hello";
+		int index = greeting.offsetByCodePoints(0, 3);
+		int cp = greeting.codePointAt(index);
+		System.out.println(index+"*"+cp);
+	}
+	
+	
+}

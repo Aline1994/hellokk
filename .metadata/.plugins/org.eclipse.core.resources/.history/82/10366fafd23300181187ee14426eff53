@@ -1,0 +1,8 @@
+package com.jdk.OOM;
+
+public class Test {
+	public static void main(String[] args) {
+		Bus bus = new Bus();
+		bus.getBus();
+	}
+}

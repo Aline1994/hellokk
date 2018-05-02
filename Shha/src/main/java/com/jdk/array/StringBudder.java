@@ -1,0 +1,36 @@
+package com.jdk.array;
+
+import java.io.Console;
+import java.util.Scanner;
+
+public class StringBudder {
+	public static void main(String[] args) {
+		/*StringBuilder sb = new StringBuilder("aaa");
+		sb.append("bbb");
+		sb.insert(0, "ccc");
+		sb.delete(0, 1);
+		System.out.println(sb.toString());
+		String b = new String("aaabbb");
+		String a = new String("aaa")+"bbb";
+		
+		System.out.println(a==b);
+		Scanner in = new Scanner(System.in);
+		String name = in.nextLine();
+		
+		int age = in.nextInt();
+		String name1 = in.next();
+		System.out.println(name);
+		System.out.println(age);
+		System.out.println(name1);
+		*/
+		/*Scanner in = new Scanner(System.in);
+		String name = in.nextLine();
+		int pass = in.nextInt();*/
+		Console cons = System.console();
+		String username = cons.readLine("name:");
+		char[]password = cons.readPassword("pass");
+		
+		System.out.println(username);
+		System.out.println(password.toString());
+	}
+}

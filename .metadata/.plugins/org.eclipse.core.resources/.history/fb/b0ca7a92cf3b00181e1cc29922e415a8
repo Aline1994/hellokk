@@ -1,0 +1,84 @@
+package com.jdk.initialshunxu;
+
+public class Qiuzhi {
+	
+	public static void main(String[] args) { 
+		 int[] data = new int[] { 2, 4, 7, 5 }; 
+		 System.out.print("初始化：\t"); 
+		 print(data); 
+		 System.out.println(""); 
+		  
+		 mergeSort(data, 0, data.length - 1); 
+		   
+		 System.out.print("\n排序后: \t"); 
+		 print(data); 
+		 } 
+		  
+		 public static void mergeSort(int[] data, int left, int right) { 
+		 if (left >= right) 
+		  return; 
+		 //两路归并 
+		 // 找出中间索引 
+		 int center = (left + right) / 2; 
+		 System.out.println("center: "+center);
+		 // 对左边数组进行递归 
+		 mergeSort(data, left, center); 
+		 // 对右边数组进行递归 
+		 mergeSort(data, center + 1, right); 
+		 // 合并 
+		 merge(data, left, center, center + 1, right); 
+		 System.out.print("排序中:\t"); 
+		 print(data); 
+		 } 
+		  
+		 /** 
+		 * 将两个数组进行归并，归并前面2个数组已有序，归并后依然有序 
+		 * 
+		 * @param data 
+		 *  数组对象 
+		 * @param leftStart 
+		 *  左数组的第一个元素的索引 
+		 * @param leftEnd 
+		 *  左数组的最后一个元素的索引 
+		 * @param rightStart 
+		 *  右数组第一个元素的索引 
+		 * @param rightEnd 
+		 *  右数组最后一个元素的索引 
+		 */
+		 public static void merge(int[] data, int leftStart, int leftEnd, 
+		  int rightStart, int rightEnd) { 
+		 int i = leftStart; 
+		 int j = rightStart; 
+		 int k = 0; 
+		 // 临时数组 
+		 int[] temp = new int[rightEnd - leftStart + 1]; //创建一个临时的数组来存放临时排序的数组 
+		 // 确认分割后的两段数组是否都取到了最后一个元素 
+		 while (i <= leftEnd && j <= rightEnd) { 
+		  // 从两个数组中取出最小的放入临时数组 
+		  if (data[i] > data[j]) { 
+		  temp[k++] = data[j++]; 
+		  } else { 
+		  temp[k++] = data[i++]; 
+		  } 
+		 } 
+		 // 剩余部分依次放入临时数组（实际上两个while只会执行其中一个） 
+		 while (i <= leftEnd) { 
+		  temp[k++] = data[i++]; 
+		 } 
+		 while (j <= rightEnd) { 
+		  temp[k++] = data[j++]; 
+		 } 
+		 k = leftStart; 
+		 // 将临时数组中的内容拷贝回原数组中 // （原left-right范围的内容被复制回原数组） 
+		 for (int element : temp) { 
+		  data[k++] = element; 
+		 } 
+		 } 
+		  
+		 public static void print(int[] data) { 
+		 for (int i = 0; i < data.length; i++) { 
+		  System.out.print(data[i] + "\t"); 
+		 } 
+		 System.out.println(); 
+		 } 
+		} 

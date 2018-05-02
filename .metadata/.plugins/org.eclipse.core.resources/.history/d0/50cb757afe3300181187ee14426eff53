@@ -1,0 +1,21 @@
+package com.jdk.thread.soldTicket;
+
+public class SaleTicket implements Runnable{
+	private int totolnum;
+	private int count;
+	public SaleTicket() {
+		this.totolnum=100;
+		this.count=0;
+	}
+
+	@Override
+	public void run() {
+		while(totolnum>0){
+			count++;
+			totolnum--;
+			System.out.println(Thread.currentThread().getName()+count+"========"+totolnum);
+		}
+		
+	}
+
+}

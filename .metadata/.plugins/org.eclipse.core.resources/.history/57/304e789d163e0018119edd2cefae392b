@@ -1,0 +1,12 @@
+package com.bonc;
+
+public class Test2 {
+	static{
+		int i = 0;
+		System.out.println(i);
+	}
+	public static int i = 10;
+	public static void main(String[] args) {
+		Test2 t = new Test2();
+	}
+}

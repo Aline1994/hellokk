@@ -1,0 +1,36 @@
+package com.bonc;
+
+import java.io.IOException;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.client.Admin;
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
+import org.apache.log4j.chainsaw.Main;
+
+public class Test {
+	 private static Connection connection;
+
+	    static {
+	        Configuration conf = new Configuration();
+	        conf.set("hbase.zookeeper.quorum", "172.16.31.221,172.16.31.222,172.16.31.223");
+	        try {
+	            connection = ConnectionFactory.createConnection(conf);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	public static  void createIndexUseAdmin() throws IOException{
+	    String tableName = "zx";
+	    String indexName = "zx_idx3";
+	    String cols = "f1:c3";
+	    Admin admin = connection.getAdmin();
+	    admin.createIndex(tableName, indexName, cols);
+	    System.out.println("创建成功");
+	}
+	public static void main(String[] args) throws IOException {
+		Test  t = new Test();
+		System.out.println("aaaaaaaaaaaaa");
+	}
+	
+}

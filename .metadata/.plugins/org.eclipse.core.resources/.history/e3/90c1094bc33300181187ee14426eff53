@@ -1,0 +1,11 @@
+package com.jdk.array;
+
+public class StringBudder {
+	public static void main(String[] args) {
+		StringBuilder sb = new StringBuilder("aaa");
+		sb.append("bbb");
+		sb.insert(0, "ccc");
+		sb.delete(0, 1);
+		System.out.println(sb.toString());
+	}
+}

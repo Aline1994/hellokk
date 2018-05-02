@@ -1,0 +1,15 @@
+package com.jdk.thread.mianshi;
+
+import java.util.Arrays;
+
+public class ZhengFuJiaoti {
+	public static void main(String[] args) {
+		int a [] = {1,2,-3,-5,3,-1};
+		int b [] = new int[a.length/2];
+		int c [] = new int[a.length/2];
+		Arrays.sort(a);
+		for(int as:a){
+			System.out.println(a);
+		}
+	}
+}

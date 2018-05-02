@@ -1,0 +1,23 @@
+package com.jdk.initialshunxu;
+
+import java.util.Random;
+
+public class Employee {
+	private static int nextId;
+	private int id;
+	private String name;
+	
+	static{
+		Random rand = new Random();
+		nextId = rand.nextInt(100);
+		
+	}
+	{
+		id=nextId;
+		nextId++;
+	}
+	 Employee(){}
+	 Employee(String name){
+		 this.name=name;
+	 }
+}

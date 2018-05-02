@@ -1,0 +1,12 @@
+package com.jdk.array;
+
+public class Gerbil {
+	private  int gerbilNumber =0;
+	public Gerbil(){
+		gerbilNumber++;
+	}
+	public void hop(){
+		System.out.println(gerbilNumber);
+		System.out.println("ÌøÔ¾");
+	}
+}

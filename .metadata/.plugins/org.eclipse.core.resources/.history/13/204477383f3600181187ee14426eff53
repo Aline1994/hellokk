@@ -1,0 +1,15 @@
+package com.jdk.thread.soldTicket;
+
+public class PrintNum implements Runnable{
+	private State s;
+	public PrintNum(State s){
+		this.s = s;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+}

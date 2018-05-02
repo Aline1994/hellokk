@@ -1,0 +1,24 @@
+package com.jdk.array;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Gerbil {
+	private  static int gerbilNumber =0;
+	public Gerbil(){
+		gerbilNumber++;
+	}
+	public void hop(){
+		System.out.println(gerbilNumber);
+		System.out.println("ÌøÔ¾");
+	}
+	public static void main(String[] args) {
+		List<Gerbil>list = new ArrayList<Gerbil>();
+		list.add(new Gerbil());
+		list.add(new Gerbil());
+		list.add(new Gerbil());
+		for(Gerbil g:list){
+			g.hop();
+		}
+	}
+}

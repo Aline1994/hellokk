@@ -1,0 +1,7 @@
+package com.jdk.thread.soldTicket;
+
+public enum State {
+	Thread1,
+	Thread2,
+	Thread3
+}

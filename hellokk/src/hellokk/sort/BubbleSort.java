@@ -7,28 +7,18 @@ package hellokk.sort;
 public class BubbleSort {
 	public static void main(String[] args) {
 		int []x={6,2,4,1,5,9};
-		bubbleSort(x);
+		bubble_sort_improve(x);
 		for (int i : x) {
 			System.out.print(i);
 		}
-		System.out.println();
+		/*System.out.println();
 		quickSort(x);
 		for(int i:x){
 			System.out.print(i);
-		}
+		}*/
 	}
 	//冒泡相邻之间的比较
-	public static void bubbleSort(int []arr){
-		for(int i=0;i<arr.length;i++){
-			for(int j=i+1;j<arr.length;j++){
-				if(arr[i]>arr[j]){
-					int temp = arr[j];
-					arr[j]=arr[i];
-					arr[i]=temp;
-				}
-			}
-		}
-	}
+	
 	//快速选择是第一个和剩下的全部进行比较找出最小的
 	public static void quickSort(int []arr){
 		for(int i=0;i<arr.length;i++){
@@ -43,40 +33,54 @@ public class BubbleSort {
 		}
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	public static void bubble_sort(int []unsort){
-		for(int i=0;i<unsort.length;i++){
-			for(int j=i+1;j<unsort.length;j++){
-				if(unsort[i]<unsort[j]){
-					int temp = unsort[i];
-					unsort[i]=unsort[j];
-					unsort[j]=temp;
+		for(int i=0;i<unsort.length-1;i++){
+			for(int j=0;j<unsort.length-i-1;j++){
+				if(unsort[j]>unsort[j+1]){
+					int temp = unsort[j];
+					unsort[j]=unsort[j+1];
+					unsort[j+1]=temp;
 				}
 			}
-			for(int in:unsort){
-				System.out.print(in+"*****");
-
-			}
-			System.out.println();
 		}
 	}
+	//優化冒泡
+	public static void bubble_sort_improve(int [] a){
+		int flag = a.length-1;
+		int k=0;
+		while(flag>0){
+			k=flag;
+			flag=0;
+			for(int j=0;j<k;j++){
+				if(a[j]>a[j+1]){
+					a[j]^=a[j+1];
+					a[j+1]^=a[j];
+					a[j]^=a[j+1];
+					flag=j;//記錄交換過的尾邊界
+				}
+				
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

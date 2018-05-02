@@ -1,0 +1,19 @@
+package com.jdk.duotai;
+
+public class Composing extends Shared{
+	private Shared shared;
+	private static long counter =0;
+	private static long id = counter++;
+	public Composing(Shared shared){
+		System.out.println("Creating"+this);
+		this.shared=shared;
+		this.shared.addRef();
+	}
+	protected void dispose(){
+		System.out.println("dispose"+this);
+		shared.dispose();
+	}
+	public String toString(){
+		return "Composing"+id;
+	}
+}

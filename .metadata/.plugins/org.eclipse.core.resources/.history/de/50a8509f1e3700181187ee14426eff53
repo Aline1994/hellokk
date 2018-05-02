@@ -1,0 +1,13 @@
+package com.jdk.abstractinterface;
+
+public class plane implements Fly {
+
+	@Override
+	public void fly() {
+		System.out.println(name+"is flying ");
+	}
+	public static void main(String[] args) {
+		plane p = new plane();
+		p.fly();
+	}
+}

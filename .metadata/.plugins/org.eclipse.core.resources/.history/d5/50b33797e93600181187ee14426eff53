@@ -1,0 +1,27 @@
+package com.jdk.thread;
+
+public class Bank implements Runnable {
+	 int sum;
+	private Cus cus;
+	@Override
+	public void run() {
+		cus = new Cus();
+		synchronized (this) {
+			for(int i=0;i<3;i++){
+				cus.add(sum);
+			}
+		}
+		
+		System.out.println(sum);
+	}
+
+	
+	
+}
+class Cus{
+	void add(int i) {
+		i+=100;
+	}
+	
+}
+

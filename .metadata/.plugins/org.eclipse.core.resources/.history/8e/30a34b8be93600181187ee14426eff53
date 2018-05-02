@@ -1,0 +1,10 @@
+package com.jdk.thread;
+
+public class Test {
+	public static void main(String[] args) {
+		DeadLock dl = new DeadLock(true);
+		DeadLock dl1 = new DeadLock(false);
+		dl.start();
+		dl1.start();
+	}
+}

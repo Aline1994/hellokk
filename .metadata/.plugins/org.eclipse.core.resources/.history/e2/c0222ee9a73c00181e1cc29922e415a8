@@ -1,0 +1,63 @@
+package test;
+
+
+public class Test {
+	private static Connection connection;
+
+    static {
+        Configuration conf = new Configuration();
+        conf.set("hbase.zookeeper.quorum", "hadoop001,hadoop002,hadoop003");
+        try {
+            connection = ConnectionFactory.createConnection(conf);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void createIndex(){
+        String tableName = "xxx";
+        String indexName = "index1";
+        String cols = "c3";
+        IndexUtil.createIndex(tableName, indexName, cols);
+    }
+
+    @Test
+    public void createIndexUseAdmin() throws IOException{
+        String tableName = "ttt3";
+        String indexName = "_index1";
+        String cols = "c3";
+
+        Admin admin = connection.getAdmin();
+        admin.createIndex(tableName, indexName, cols);
+    }
+
+    @Test
+    public void systemTable() throws IOException {
+        Admin admin = connection.getAdmin();
+//        HTableDescriptor sys = admin.getTableDescriptor(TableName.valueOf(HMasterConstant.SYSTEM_INDEX));
+        Table table  = connection.getTable(TableName.valueOf(HMasterConstant.SYSTEM_INDEX));
+        ResultScanner scanner = table.getScanner(new Scan());
+        Result result = null;
+        while ((result = scanner.next()) != null){
+            System.out.println(result.rawCells());
+
+            String rowkey = Bytes.toString(result.getRow());
+            System.out.println(rowkey + "  " + rowkey.contains("t1"));
+            result = scanner.next();
+        }
+    }
+
+    @Test
+    public void deleteIndex() throws IOException {
+        Admin admin = connection.getAdmin();
+        admin.deleteIndex("ttt3", "_index1");
+//        admin.deleteTable(TableName.valueOf("ttt2_idx"));
+    }
+    @Test
+    public void deleteTable() throws IOException {
+        Admin admin = connection.getAdmin();
+        admin.disableTable(TableName.valueOf("xxx"));
+        admin.deleteTable(TableName.valueOf("xxx"));
+    }
+}

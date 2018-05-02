@@ -1,0 +1,8 @@
+package com.jdk.base;
+
+public class Daimakuai {
+	{
+		int a = 10;
+		System.out.println("ÆÕÍ¨´úÂë¿é"+a);
+	}
+}

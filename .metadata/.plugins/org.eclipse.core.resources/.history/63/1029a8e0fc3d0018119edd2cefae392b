@@ -1,0 +1,74 @@
+package com.bonc;
+
+import java.io.IOException;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.client.Admin;
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
+import org.apache.hadoop.hbase.client.IndexInfo;
+import org.apache.log4j.chainsaw.Main;
+
+public class Test {
+	 private static Connection connection;
+
+	    static {
+	        Configuration conf = new Configuration();
+	        conf.set("hbase.zookeeper.quorum", "hadoop001,hadoop002,hadoop003");
+	        try {
+	            connection = ConnectionFactory.createConnection(conf);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	public  void createIndexUseAdmin() throws IOException{
+	    String tableName = "zx";
+	    String indexName = "zx_idx3";
+	    String cols = "f1:c3";
+	    Admin admin = connection.getAdmin();
+	    admin.createIndex(tableName, indexName, cols);
+	    System.out.println("创建成功");
+	}
+	//这张表上有哪些索引
+	public void testListIndexsTable(){
+	    try {
+	        Admin admin=connection.getAdmin();
+	        IndexInfo[] indexs=admin.listIndexsTable("zx");
+	        for (IndexInfo index: indexs) {
+	            System.out.println("index: "+index.toString());
+	        }
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	//所有索引
+	public void testListIndexs(){
+	    try {
+	        Admin admin=connection.getAdmin();
+	        IndexInfo[] indexs=admin.listIndex();
+	        for (IndexInfo index: indexs) {
+	            System.out.println("all index: "+index.toString());
+	        }
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+
+	}
+
+	public void testIndexExist(){
+	    try {
+	        Admin admin=connection.getAdmin();
+	        boolean indexExists=admin.indexExists("zx","f1","c1");
+	        System.out.println("是否存在"+indexExists);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	public static void main(String[] args) throws IOException {
+		Test t = new Test();
+		t.testListIndexs();
+		t.testListIndexsTable();
+		t.testIndexExist();
+	}
+	
+}

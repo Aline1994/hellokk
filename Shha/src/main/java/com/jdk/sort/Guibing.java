@@ -1,0 +1,45 @@
+package com.jdk.sort;
+
+public class Guibing {
+	
+	public static  void mergeSort(int[] a,int left,int right){
+		if(left>=right){
+			return;
+		}
+		int mid = (right+left)/2;
+		mergeSort(a,left,mid);
+		mergeSort(a,mid+1,right);
+		merge(a,left,mid,mid+1,right);
+	}
+
+	private static void merge(int[] a, int leftstart, int leftend, int rightstart, int rightend) {
+		int i = leftstart;
+		int j = rightstart;
+		int k = 0;
+		int [] temp = new int[rightend-leftstart+1];
+		while(i <= leftend && j <= rightend){
+			if(a[i]<a[j]){
+				temp[k++]=a[i++];
+			}else{
+				temp[k++]=a[j++];
+			}
+		}
+		while(i <= leftend){
+			temp[k++]=a[i++];
+		}
+		while(j <= rightend){
+			temp[k++]=a[j++];
+		}
+		k=leftstart;
+		for(Integer t:temp){
+			a[k++]=t;
+		}
+	}
+	public static void main(String[] args) {
+		int [] b = {3,2,4,1,7,1};
+		mergeSort(b, 0, b.length-1);
+		for(int i=0;i<b.length;i++){
+			System.out.print(b[i]);
+		}
+	}
+}

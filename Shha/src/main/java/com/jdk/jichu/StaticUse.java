@@ -1,0 +1,23 @@
+package com.jdk.jichu;
+
+import java.util.Random;
+
+public class StaticUse {
+	public static final int [] b = new int[5];
+	public static final int  c=5;
+	public static void main(String[] args) {
+		final int[] a = new int[5];
+		
+		for(int i=0;i<5;i++){
+			System.out.println(a[i]);
+			System.out.println(b[i]);
+			a[i]=a[i]+1;
+			b[i]=b[i]+1;
+			System.out.println(a[i]);
+			System.out.println(b[i]);
+		}
+		System.out.println();
+	}
+	
+	
+}

@@ -1,0 +1,51 @@
+package com.bonc;
+
+public class Test2 {
+	/*static{
+		int i = 0;
+		System.out.println(i);
+	}
+	 static int i = 10;
+	public static void main(String[] args) {
+		Test2 t = new Test2();
+	}*/
+	public static void main(String[] args) {
+		/*byte b1=1,b2=2,b3,b6; 
+		final byte b4=4,b5=6; 
+		b6=b4+b5; 
+		b3=(byte) (b1+b2); 
+		System.out.println(b3+b6);*/
+		/*short a = 128;
+		byte x = (byte)a;
+		System.out.println(x);*/
+		
+		int [][] a = {{1,2,3},{4,5,6},{7,8,9}};
+		System.out.println(Find(3,a));
+	}
+	
+	public static boolean Find(int target, int [][] array) {
+        for(int i=0;i<array.length;i++){
+            for(int j=0;j<array[i].length;j++){
+                if(array[i][j]==target){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

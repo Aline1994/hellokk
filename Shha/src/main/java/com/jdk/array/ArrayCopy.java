@@ -1,0 +1,15 @@
+package com.jdk.array;
+
+import java.util.Arrays;
+
+public class ArrayCopy {
+	public static void main(String[] args) {
+		int []a = {1,2,3,4,5};
+		int [] b = {6,4,7,5,8};
+		int z[] = new int[9];
+		Arrays.fill(z, 2);
+		System.out.println(Arrays.toString(z));
+		System.arraycopy(a, 0, b, 0, 3);
+		System.out.println(Arrays.toString(b));
+	}
+}
